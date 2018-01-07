@@ -58,7 +58,7 @@ def get_thumbnail(path, create=True, dst_dir=_thumbdir):
 
 def delete_thumbnail(path, dst_dir=_thumbdir):
     """Delete the thumbnail (if it exists) for the file at <path>.
-    
+
     If <dst_dir> is set it is the base thumbnail directory, if not we use
     the default .thumbnails/normal/.
     """
@@ -154,7 +154,8 @@ def _create_thumbnail(path, dst_dir, image_path=None):
 
 
 def _path_to_thumbpath(path, dst_dir):
-    uri = 'file://' + pathname2url(os.path.normpath(path).encode('utf-8'))
+    #uri = 'file://' + pathname2url(os.path.normpath(path).encode('utf-8'))
+    uri = 'file://' + pathname2url(os.path.normpath(path))
     return _uri_to_thumbpath(uri, dst_dir)
 
 
